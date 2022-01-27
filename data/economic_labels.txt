@@ -1,0 +1,11 @@
+venit_propriu
+chelt_asistenta_sociala
+pop_ocupata_civila
+spor_migratoriu
+chelt_inv
+rata_part_forta_munca_fem
+pondere_someri
+acces_dj
+densitate_pop
+sume_ue
+finantare_mdrap

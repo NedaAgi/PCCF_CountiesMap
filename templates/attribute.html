@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block js %}
+	<script type="text/javascript" src="../static/js/attribute.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1 class="text" id="title">{% block title %} Clustering by selected attributes {% endblock %}</h1>
+    <div class="container_show">
+        <div class="rightPart">
+            <div class="text" id="dataType">
+                <p class="highlightedText">Data type:</p>
+                <select class="text" onchange="selectedDataType(this)">
+                    <option value="" selected="selected">-- Select data type -- </option>
+                    <option id="economic" name="economic" value="economic" >Economic</option>
+                    <option id="psychological" name="psychological" value="psychological">Psychological</option>
+                </select>
+            </div>
+            <div class="text" id="form" style="display:none">
+                <p class="highlightedText">Select attributes:</p>
+                <p>(Attribute name, Gini index, Weight)</p>
+                <form class="attributeForms" id="form1" method="post" style="display:none">
+                    <div class="div_scrollbar">
+                    {% for attribute1 in attributes1 %}
+                        <input type="checkbox" id="{{attribute1}}" name="{{attribute1}}" value="{{attribute1}}">
+                        <label for="{{attribute1}}">{{ attribute1 }}</label><br>
+                        <hr>
+                    {% endfor %}
+                    </div>
+                    <input class=" text button" type="submit" value="Show" name = "submit_form1">
+                </form>
+                <form class="attributeForms" id="form2" method="post" style="display:none">
+                    <div class="div_scrollbar">
+                    {% for attribute2 in attributes2 %}
+                        <input type="checkbox" id="{{attribute2}}" name="{{attribute2}}" value="{{attribute2}}">
+                        <label for="{{attribute2}}">{{ attribute2 }}</label><br>
+                        <hr>
+                    {% endfor %}
+                    </div>
+                    <input class=" text button" type="submit" value="Show" name = "submit_form2">
+                </form>
+                <p class="text highlightedText">* Select more than one attribute! </p>
+            </div>
+
+        </div>
+        {% if network %}
+            {% include "./map.html" %}
+            <div class="text" id="attributeList">
+                <p class="highlightedText">Selected attributes:</p>
+                <ul>
+                {% for attribute in attributes %}
+                    <li>{{ attribute }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

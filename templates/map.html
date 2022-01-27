@@ -1,0 +1,30 @@
+<script type="text/javascript" src="../static/js/mapdata.js"></script>
+<script type="text/javascript" src="../static/js/countrymap.js"></script>
+<script type="text/javascript" src="../static/js/map.js"></script>
+<script type="text/javascript" src="../static/js/colors.js"></script>
+
+<div id="container_map">
+    <div id="map">
+    </div>
+    <script>
+          var networkData = JSON.parse('{{network | safe }}');
+          var network = networkData.edges;
+          var limits = {{ limits | safe }};
+    </script>
+    <div id="container_slider">
+        <div>
+            <input id="slider" class="slider" type="range" min="0" max="102" value="0" oninput="changeValueOnSlider(this.value, network, limits)">
+        </div>
+        <div>
+            <p class=" text highlightedText">Threshold value: <span id="sliderValue">1.0000000000</span></p>
+        </div>
+    </div>
+    <script>
+        changeValueOnSlider(0, network, limits);
+    </script>
+    <script>
+        setInterval(function() {
+            hideText();
+        }, 0.3);
+    </script>
+</div>

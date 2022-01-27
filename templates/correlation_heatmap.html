@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block js %}
+	<script type="text/javascript" src="../static/js/correlation_heatmap.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1 class="text" id="title">{% block title %} Attribute correlation heatmap {% endblock %}</h1>
+    <div class="container_show">
+        <div class="text container_right">
+            <script>
+                var economic_attributes = {{ economic_attributes | safe }};
+                var psychological_attributes = {{ psychological_attributes | safe }};
+            </script>
+            <div id="dataType">
+                <p class="highlightedText">Data types:</p>
+                <select class="text" onchange="selectedDataTypes(this, economic_attributes, psychological_attributes)">
+                    <option value="" selected="selected">-- Select data types -- </option>
+                    <option id="economic" name="economic" value="economic" >Economic & Economic</option>
+                    <option id="psychological" name="psychological" value="psychological">Psychological & Psychological</option>
+                    <option id="economic_psychological" name="economic_psychological" value="economic_psychological">Economic & Psychological</option>
+                </select>
+            </div>
+            <div>
+                <form class="attributeForms" id="form" method="post" style="display:none">
+                    <div class="container_lists">
+                        <div>
+                            <p class="highlightedText">Select x-axis attributes:</p>
+                            <p>(Attribute name, Gini index, Weight)</p>
+                            <div id="attribute1_list" class="div_scrollbar">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="highlightedText">Select y-axis attributes:</p>
+                            <p>(Attribute name, Gini index, Weight)</p>
+                            <div id="attribute2_list" class="div_scrollbar">
+                            </div>
+                        </div>
+                    </div>
+                    <input class=" text button" type="submit" value="Show" name = "submit_form">
+                    <p class="highlightedText">* Select different attributes on the two axes!</p>
+                </form>
+            </div>
+        </div>
+        {% if plot_url %}
+        <div class="container_image">
+            <img id="image" src="data:image/png;base64, {{ plot_url }}">
+        </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,200 @@
+#title {
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 54px;
+    font-weight: 350;
+    background-color: #88A4BC;
+    width: 100%;
+    margin:0px !important;
+    border:0px !important;
+
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    align:bottom;
+    height: 90%;
+    font-size: 14px;
+    border-radius: 0.25em;
+    border: 1px solid #aaa;
+    margin-left:3%;
+    cursor: pointer;
+    padding: 0.2em 0.4em;
+}
+
+.text {
+    color: #242424;
+    font-size: 16px;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.highlightedText {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#dataType {
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    display: flex;
+    width: 120%;
+}
+
+
+
+.attributeLists > div {
+    width:300px;
+}
+
+.attributeForms .div_scrollbar{
+    max-height: 45vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.attributeForms .div_scrollbar::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.attributeForms .div_scrollbar::-webkit-scrollbar:vertical {
+    width: 0.7em;
+    height: 5em;
+}
+
+.attributeForms .div_scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#attributeList {
+    padding-left:50px;
+}
+
+#attributeList ul{
+
+    overflow-y: scroll;
+    max-height: 70vh;
+    list-style-type: square;
+}
+
+#attributeList ul li {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.rightPart {
+    width: 34%;
+    display: block;
+}
+
+#sliderValue {
+    font-weight: normal;
+}
+
+html, body, header, title {
+    margin:0px !important;
+    border:0px !important;
+    width: 100%;
+    height: 100%;
+
+}
+
+.container_show {
+    padding-top: 25px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+}
+
+#container_slider {
+    padding-top: 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #88A4BC;
+  border-radius: 2px;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #242424;
+  cursor: pointer;
+  border-radius: 0.25em;
+}
+
+.slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #242424;
+  cursor: pointer;
+  border-radius: 0.25em;
+  border: none;
+}
+
+.button {
+    background: #88A4BC;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    float: right;
+    padding:0.4em 2.2em;
+    margin: 0.5em 1.5em 1.5em 0.5em;
+    cursor:pointer;
+    border:none;
+}
+
+#container_map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:20px;
+}
+
+#container_right {
+    justify-content: center;
+    align-items: center;
+}
+
+#image {
+    width:100%;
+}
+
+.container_image {
+    padding-left:2%;
+    width: 45%;
+    float: right;
+    justify-content: right;
+    align-items: right;
+}
+
+.container_lists {
+    display: flex;
+    align-items: center;
+}
